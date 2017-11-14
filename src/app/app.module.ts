@@ -73,14 +73,9 @@ import { JoblistingComponent } from './joblisting/joblisting.component';
   entryComponents: [
     LoginComponent
   ],
-  providers: [DishService,PromotionService,LeaderService,Logger,{ provide: Options, useValue:{ level:environment.logger.level,store: false }}],
+  providers: [DishService,PromotionService,LeaderService,Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private logger: Logger) {
-    if (isDevMode()) {
-      console.info('To see debug logs enter: \'logger.level = logger.Level.DEBUG;\' in your browser console');
-    }
-    this.logger.level = environment.logger.level;
-  }
+
 }
